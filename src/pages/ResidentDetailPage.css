@@ -1,0 +1,287 @@
+
+.resident-detail-page {
+  animation: fade-in 0.3s ease-out;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.resident-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.resident-header {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--gray-300);
+  position: relative;
+}
+
+.resident-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-right: 1rem;
+  overflow: hidden;
+}
+
+.resident-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.resident-title h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.resident-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.resident-apartment {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.edit-btn {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+}
+
+.resident-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--gray-300);
+  background-color: var(--gray-100);
+}
+
+.tab-btn {
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-weight: 500;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+.tab-content {
+  padding: 1.5rem;
+}
+
+/* Profile Tab */
+.profile-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.info-section h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--gray-300);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.info-item {
+  margin-bottom: 0.75rem;
+}
+
+.info-label {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 0.25rem;
+}
+
+.info-value {
+  font-weight: 500;
+}
+
+.balance-zero {
+  color: var(--success-color);
+}
+
+.balance-due {
+  color: var(--warning-color);
+  font-weight: 600;
+}
+
+.notes-box {
+  background-color: var(--gray-100);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border-left: 3px solid var(--gray-400);
+}
+
+/* Edit Form */
+.edit-form {
+  margin-bottom: 1rem;
+}
+
+.edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Invoices Tab */
+.tab-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.tab-header h3 {
+  margin: 0;
+}
+
+.invoices-table {
+  width: 100%;
+}
+
+.invoices-table th,
+.invoices-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--gray-300);
+}
+
+/* Repairs Tab */
+.repairs-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.repair-item {
+  background-color: var(--gray-100);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  border-left: 3px solid var(--primary-color);
+}
+
+.repair-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.repair-id {
+  font-weight: 600;
+}
+
+.repair-date {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.repair-desc {
+  line-height: 1.4;
+}
+
+.repair-status {
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.status-pending {
+  background-color: rgba(245, 124, 0, 0.1);
+  color: var(--warning-color);
+}
+
+.status-in-progress {
+  background-color: rgba(26, 115, 232, 0.1);
+  color: #1a73e8;
+}
+
+.status-completed {
+  background-color: rgba(56, 142, 60, 0.1);
+  color: var(--success-color);
+}
+
+.no-data {
+  padding: 3rem;
+  text-align: center;
+  background-color: var(--gray-100);
+  border-radius: var(--border-radius);
+  color: var(--text-light);
+}
+
+/* Error State */
+.error-state {
+  padding: 3rem;
+  text-align: center;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  color: var(--error-color);
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .profile-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .repairs-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile-info {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .info-section:last-child {
+    grid-column: span 2;
+  }
+}

@@ -1,0 +1,255 @@
+
+.meetings-page {
+  animation: fade-in 0.3s ease-out;
+}
+
+.meetings-tabs {
+  display: flex;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--gray-300);
+}
+
+.tab-button {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-weight: 500;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+.tab-button.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+.meetings-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.meeting-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.meeting-card-content {
+  display: flex;
+  padding: 1.5rem;
+}
+
+.meeting-date-container {
+  margin-right: 1.5rem;
+  text-align: center;
+}
+
+.meeting-date {
+  width: 60px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.meeting-day {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0.25rem 0;
+}
+
+.meeting-month {
+  background-color: var(--primary-dark);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.15rem 0;
+}
+
+.meeting-time {
+  margin-top: 0.5rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.meeting-info {
+  flex: 1;
+}
+
+.meeting-title {
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+}
+
+.meeting-location {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.meeting-location::before {
+  content: "📍";
+  margin-right: 0.5rem;
+}
+
+.meeting-description {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.meeting-attachments-count {
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+}
+
+.attachment-icon {
+  margin-right: 0.5rem;
+}
+
+.meeting-actions {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--gray-300);
+  background-color: var(--gray-100);
+}
+
+/* Meeting Detail Modal Specifics */
+.meeting-detail-section {
+  margin-bottom: 1rem;
+}
+
+.meeting-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.meeting-detail-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.meeting-detail-item {
+  display: flex;
+  align-items: center;
+}
+
+.detail-icon {
+  margin-right: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.meeting-status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-upcoming {
+  background-color: rgba(33, 150, 243, 0.1);
+  color: #2196f3;
+}
+
+.status-completed {
+  background-color: rgba(56, 142, 60, 0.1);
+  color: var(--success-color);
+}
+
+.status-cancelled {
+  background-color: rgba(211, 47, 47, 0.1);
+  color: var(--error-color);
+}
+
+.meeting-detail-description, 
+.meeting-detail-minutes, 
+.meeting-detail-attachments {
+  margin-top: 2rem;
+}
+
+.meeting-detail-description h3, 
+.meeting-detail-minutes h3, 
+.meeting-detail-attachments h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--gray-300);
+}
+
+.meeting-detail-description p {
+  line-height: 1.6;
+}
+
+.minutes-content {
+  background-color: var(--gray-100);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border-left: 3px solid var(--primary-color);
+  line-height: 1.6;
+}
+
+.attachments-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.attachment-item {
+  display: flex;
+  align-items: center;
+  background-color: var(--gray-100);
+  border-radius: var(--border-radius);
+  padding: 0.75rem;
+}
+
+.attachment-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.attachment-info {
+  flex: 1;
+}
+
+.attachment-name {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.attachment-meta {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.attachment-download-btn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .meetings-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .attachments-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .meetings-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
