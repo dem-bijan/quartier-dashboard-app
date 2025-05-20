@@ -89,7 +89,8 @@ const StaffPage = () => {
         email: staffData.email || '',
         startDate: staffData.startDate || new Date().toISOString().split('T')[0],
         status: staffData.status || 'active',
-        photo: staffData.photo || `https://randomuser.me/api/portraits/${Math.random() > 0.5 ? 'men' : 'women'}/${Math.floor(Math.random() * 100)}.jpg`
+        // Suppression de la génération automatique de photo
+        photo: undefined
       };
       setStaff([...staff, newStaff]);
     }
@@ -144,7 +145,11 @@ const StaffPage = () => {
           <div key={person.id} className="staff-card">
             <div className={`staff-status ${person.status}`}></div>
             <div className="staff-photo">
-              <img src={person.photo} alt={person.name} />
+              {person.photo ? (
+                <img src={person.photo} alt={person.name} />
+              ) : (
+                <div className="no-photo">Pas de photo</div>
+              )}
             </div>
             <div className="staff-info">
               <h3>{person.name}</h3>
