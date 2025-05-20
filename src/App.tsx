@@ -11,6 +11,8 @@ import ResidentsPage from "./pages/ResidentsPage";
 import ResidentDetailPage from "./pages/ResidentDetailPage";
 import RepairsPage from "./pages/RepairsPage";
 import MeetingsPage from "./pages/MeetingsPage";
+import StaffPage from "./pages/StaffPage";
+import GaragePage from "./pages/GaragePage";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
@@ -39,6 +41,8 @@ const AppRoutes = () => {
         <Route path="residents/:id" element={<ResidentDetailPage />} />
         <Route path="repairs" element={<RepairsPage />} />
         <Route path="meetings" element={<MeetingsPage />} />
+        <Route path="staff" element={<StaffPage />} />
+        <Route path="garage" element={<GaragePage />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

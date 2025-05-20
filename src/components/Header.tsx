@@ -7,10 +7,10 @@ const Header = () => {
   const { user } = useAuth();
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
 
-  // Simulated notifications data
+  // Données simulées pour les notifications avec contexte marocain
   const notifications = [
     { id: 1, message: "Nouvelle demande de réparation #342", time: "Il y a 5 min", isRead: false },
-    { id: 2, message: "Rappel: Assemblée générale le 15/06", time: "Il y a 2h", isRead: false },
+    { id: 2, message: "Rappel: Assemblée générale le 15 Ramadan", time: "Il y a 2h", isRead: false },
     { id: 3, message: "Facture #567 en attente de paiement", time: "Il y a 1j", isRead: true },
   ];
   
@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-left">
-        <h1 className="page-title">Gestion de Syndic</h1>
+        <h1 className="page-title">Le Syndic</h1>
       </div>
       
       <div className="header-right">

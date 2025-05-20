@@ -30,7 +30,7 @@ const Sidebar = () => {
       
       <aside className={`sidebar ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
         <div className="sidebar-header">
-          <div className="logo">SyndiGest</div>
+          <div className="logo">Le Syndic</div>
         </div>
         
         <div className="user-info">
