@@ -1,4 +1,3 @@
-
 .staff-page {
   animation: fade-in 0.3s ease-out;
 }
@@ -39,27 +38,6 @@
 
 .staff-status.terminated {
   background-color: var(--error-color);
-}
-
-.staff-photo {
-  height: 180px;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--gray-100);
-}
-
-.staff-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.no-photo {
-  color: var(--text-light);
-  font-style: italic;
 }
 
 .staff-info {

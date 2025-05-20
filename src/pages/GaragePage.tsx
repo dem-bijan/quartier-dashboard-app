@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import './GaragePage.css';
 
@@ -173,7 +172,7 @@ const GaragePage = () => {
     const newSpotId = Math.max(0, ...parkingSpots.map(s => s.id)) + 1;
     const newSpot: ParkingSpot = {
       id: newSpotId,
-      number: prompt('Veuillez saisir le numéro de la place') || `P${newSpotId.toString().padStart(3, '0')}`,
+      number: `P${newSpotId.toString().padStart(3, '0')}`,
       type: 'car',
       status: 'available'
     };

@@ -11,7 +11,6 @@ interface StaffMember {
   email: string;
   startDate: string;
   status: 'active' | 'on-leave' | 'terminated';
-  photo?: string;
 }
 
 const StaffPage = () => {
@@ -24,8 +23,7 @@ const StaffPage = () => {
       phone: '06-12-34-56-78', 
       email: 'mohamed.alaoui@lesyndic.ma', 
       startDate: '2022-01-15', 
-      status: 'active',
-      photo: 'https://randomuser.me/api/portraits/men/1.jpg'
+      status: 'active'
     },
     { 
       id: 2, 
@@ -34,8 +32,7 @@ const StaffPage = () => {
       phone: '06-23-45-67-89', 
       email: 'fatima.benani@lesyndic.ma', 
       startDate: '2021-06-10', 
-      status: 'active',
-      photo: 'https://randomuser.me/api/portraits/women/2.jpg'
+      status: 'active'
     },
     { 
       id: 3, 
@@ -44,8 +41,7 @@ const StaffPage = () => {
       phone: '06-34-56-78-90', 
       email: 'karim.tazi@lesyndic.ma', 
       startDate: '2023-03-20', 
-      status: 'active',
-      photo: 'https://randomuser.me/api/portraits/men/3.jpg'
+      status: 'active'
     },
     { 
       id: 4, 
@@ -54,8 +50,7 @@ const StaffPage = () => {
       phone: '06-45-67-89-01', 
       email: 'samira.idrissi@lesyndic.ma', 
       startDate: '2021-09-05', 
-      status: 'on-leave',
-      photo: 'https://randomuser.me/api/portraits/women/4.jpg'
+      status: 'on-leave'
     },
   ]);
 
@@ -88,9 +83,7 @@ const StaffPage = () => {
         phone: staffData.phone || '',
         email: staffData.email || '',
         startDate: staffData.startDate || new Date().toISOString().split('T')[0],
-        status: staffData.status || 'active',
-        // Suppression de la génération automatique de photo
-        photo: undefined
+        status: staffData.status || 'active'
       };
       setStaff([...staff, newStaff]);
     }
@@ -144,13 +137,6 @@ const StaffPage = () => {
         {filteredStaff.map(person => (
           <div key={person.id} className="staff-card">
             <div className={`staff-status ${person.status}`}></div>
-            <div className="staff-photo">
-              {person.photo ? (
-                <img src={person.photo} alt={person.name} />
-              ) : (
-                <div className="no-photo">Pas de photo</div>
-              )}
-            </div>
             <div className="staff-info">
               <h3>{person.name}</h3>
               <p className="staff-role">{person.role}</p>
