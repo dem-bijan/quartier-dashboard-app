@@ -1,32 +1,39 @@
 
 import { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
+import { toast } from '@/components/ui/use-toast';
 import './LoginPage.css';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { login } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email || !password) {
-      setError('Veuillez remplir tous les champs');
+      toast({
+        variant: "destructive",
+        title: "Erreur",
+        description: "Veuillez remplir tous les champs",
+      });
       return;
     }
 
     try {
       setIsLoading(true);
-      setError('');
       const success = await login(email, password);
       
       if (!success) {
-        setError('Identifiants incorrects');
+        // Toast notification is handled in the AuthContext
       }
     } catch (err) {
-      setError('Une erreur est survenue. Veuillez réessayer.');
+      toast({
+        variant: "destructive",
+        title: "Erreur",
+        description: "Une erreur est survenue. Veuillez réessayer.",
+      });
       console.error(err);
     } finally {
       setIsLoading(false);
@@ -44,9 +51,7 @@ const LoginPage = () => {
         <div className="login-form-container">
           <h2>Connexion</h2>
           
-          <form className="login-form" onSubmit={handleSubmit}>
-            {error && <div className="error-message">{error}</div>}
-            
+          <form className="login-form" onSubmit={handleSubmit}>            
             <div className="form-group">
               <label htmlFor="email">Email</label>
               <input
